@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/****** RESETS ******/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/****** Body ******/
+body {
+  background-color: #f9fafb;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+}
+
