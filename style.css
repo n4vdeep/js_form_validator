@@ -81,6 +81,15 @@ h2 {
   border-color: var(--error-color);
 }
 
+/* .form-control .success {
+  color:  var(--success-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* initially hide error msg
+  visibility: hidden;
+} */
+
 .form-control small {
   color:  var(--error-color);
   position: absolute;
@@ -94,6 +103,11 @@ h2 {
   /* only make error msg visible on invalid input*/
   visibility: visible;
 }
+
+/* .form-control.success small {
+  /* only make success msg visible on valid input
+  visibility: visible;
+} */
 
 /****** BUTTON ******/
 .form button {
