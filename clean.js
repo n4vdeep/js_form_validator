@@ -1,10 +1,10 @@
-// SIMPLE WAY
+// REFACTORED main.js
 // First assign variables for each of the form inputs
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
+// const form = document.getElementById('form');
+// const username = document.getElementById('username');
+// const email = document.getElementById('email');
+// const password = document.getElementById('password');
+// const password2 = document.getElementById('password2');
 
 // Show input error msg code to trigger ibn event listener
 function showError(input, message) {
@@ -30,12 +30,11 @@ function checkEmail(input) {
   }
 };
 
-/* REFACTORED if's AS REUSABLE FUNCTIONS */
+// Check if inputs have information
 function checkRequired(inputArray) {
-  /* loop through input array and check each one for validity */
-  /* (forEach() is a higher order function that takes in a function) */
+  /* loop through input array where function
+  called and check each one for validity */
   inputArray.forEach(function (input) {
-    //console.log(input.value)
     if (input.value.trim() === '') {
       showError(input, `${getFieldName(input)} is required`);
     } else {
@@ -80,41 +79,8 @@ form.addEventListener('submit', function (e) {
   checkLength(username, 3, 15)
   /* 6 and 25 are the min and max password lengths allowed */
   checkLength(password, 6, 25)
-
+  /* Call checkEmail function */
   checkEmail(email);
-
+  /* Call checkPasswordsMatch function */
   checkPasswordsMatch(password, password2);
-
-
-  /* 
-  
-  COMMENTING OUT TO REFACTOR AS ABOVE
-  
-  if (username.value === '') {
-    showError(username, 'Username is required');
-  } else {
-    showSuccess(username);
-  }
-
-  if (email.value === '') {
-    showError(email, 'Email is required');
-  } else if (!isValidEmail(email.value)) {
-    showError(email, 'Enter a valid email address');
-  } else {
-    showSuccess(email);
-  }
-
-  if (password.value === '') {
-    showError(password, 'Password is required');
-  } else {
-    showSuccess(password);
-  }
-
-  if (password2.value === '') {
-    showError(password2, 'Password do not match');
-  } else {
-    showSuccess(password2);
-  }
-
-  */
 });
